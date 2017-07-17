@@ -61,6 +61,7 @@ echo $_SERVER['SCRIPT_NAME'];
   echo "Study " . $_GET['data'];
 
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
+     echo "Request";
     // collect value of input field
     $name = $_REQUEST['data'];
     if (empty($name)) {
@@ -74,6 +75,7 @@ echo $_SERVER['SCRIPT_NAME'];
 
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+       echo "Post";
         // collect value of input field
         $name = $_POST['data']; 
         if (empty($name)) {
