@@ -29,13 +29,9 @@ $app->get('/cowsay', function() use($app) {
 });
 
 $app->get('/getData', function() use($app) { 
-  // $app['monolog']->addDebug('cowsay');
-  // return "<pre>".\Cowsayphp\Cow::say("Cool beans")."</pre>";
+
+
   
-  // $xml = simplexml_load_string($xml_string);
-  // $json = json_encode($xml);
-  // $array = json_decode($json,TRUE);
-  // return $array;
 
 
     class XmlToJson {
@@ -51,10 +47,19 @@ $app->get('/getData', function() use($app) {
 
     }
 
+  // get the HTTP method, path and body of the request
+  $ch = curl_init($url);
 
+  curl_setopt($ch, CURLOPT_POST, 1);
+  curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  $result = curl_exec($ch);
+  curl_close($ch);
 
+  print $resul;
+  
   $url = 'http://pf.tradetracker.net/?aid=1&fid=251713&categoryType=2&additionalType=2&limit=10';
-  print XmlToJson::Parse($url);  
+  // print XmlToJson::Parse($url);  
 });
 
 $app->run();
