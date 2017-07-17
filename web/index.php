@@ -34,7 +34,7 @@ $app->get('/getData', function() use($app) {
   $xml = simplexml_load_string($xml_string);
   $json = json_encode($xml);
   $array = json_decode($json,TRUE);
-  print $array;
+  return $array;
 });
 
 $app->run();
