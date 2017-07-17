@@ -28,7 +28,7 @@ $app->get('/cowsay', function() use($app) {
   return "<pre>".\Cowsayphp\Cow::say("Cool beans")."</pre>";
 });
 
-$app->get('/getData', function() use($app) { 
+$app->post('/getData', function() use($app) { 
 
 
   echo ("Welcome");
