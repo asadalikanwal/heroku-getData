@@ -29,6 +29,7 @@ $app->get('/cowsay', function() use($app) {
 });
 
 $app->post('/getData', function() use($app) { 
+header("Access-Control-Allow-Origin: *");
 
 
   echo ("Welcome");
