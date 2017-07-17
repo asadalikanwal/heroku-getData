@@ -31,7 +31,7 @@ $app->get('/cowsay', function() use($app) {
 $app->get('/getData', function() use($app) { 
 
 
-  
+  echo ("Welcome");
 
 
     class XmlToJson {
@@ -48,6 +48,7 @@ $app->get('/getData', function() use($app) {
     }
 
   if (is_ajax()) {
+    echo ("is_ajax()");
     if (isset($_POST["action"]) && !empty($_POST["action"])) { //Checks if action value exists
       $action = $_POST["action"];
       switch($action) { //Switch case for value of action
@@ -58,6 +59,7 @@ $app->get('/getData', function() use($app) {
 
 //Function to check if the request is an AJAX request
 function is_ajax() {
+  echo ("is_ajax() 2");
   return isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest';
 }
 
