@@ -29,21 +29,9 @@ $app->get('/cowsay', function() use($app) {
 });
 
 $app->post('/getData', function() use($app) { 
-header("Access-Control-Allow-Origin: *");
 
 
   echo ("Welcome");
-  echo $_SERVER['PHP_SELF'];
-echo "<br>";
-echo $_SERVER['SERVER_NAME'];
-echo "<br>";
-echo $_SERVER['HTTP_HOST'];
-echo "<br>";
-echo $_SERVER['HTTP_REFERER'];
-echo "<br>";
-echo $_SERVER['HTTP_USER_AGENT'];
-echo "<br>";
-echo $_SERVER['SCRIPT_NAME'];
 
 
     class XmlToJson {
@@ -60,6 +48,7 @@ echo $_SERVER['SCRIPT_NAME'];
     }
 
   echo "Study " . $_GET['data'];
+  echo 'Hello ' . htmlspecialchars($_POST["data"]) . '!';
 
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
      echo "Request";
