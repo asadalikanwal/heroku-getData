@@ -27,4 +27,14 @@ $app->get('/cowsay', function() use($app) {
   return "<pre>".\Cowsayphp\Cow::say("Cool beans")."</pre>";
 });
 
+$app->get('/getData', function() use($app) { 
+  // $app['monolog']->addDebug('cowsay');
+  // return "<pre>".\Cowsayphp\Cow::say("Cool beans")."</pre>";
+  $xml_string = 'http://pf.tradetracker.net/?aid=1&fid=251713&categoryType=2&additionalType=2&limit=10';
+  $xml = simplexml_load_string($xml_string);
+  $json = json_encode($xml);
+  $array = json_decode($json,TRUE);
+  print $array;
+});
+
 $app->run();
