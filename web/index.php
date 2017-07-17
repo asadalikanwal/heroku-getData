@@ -64,6 +64,7 @@ function is_ajax() {
 }
 
 function test_function(){
+  echo ("Test function");
   $return = $_POST;
   
   //Do what you need to do with the info. The following are some examples.
