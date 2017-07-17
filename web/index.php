@@ -57,8 +57,8 @@ $app->get('/getData', function() use($app) {
   print $result;
   curl_close($ch);
   
-  $url = 'http://pf.tradetracker.net/?aid=1&fid=251713&categoryType=2&additionalType=2&limit=10';
-  print XmlToJson::Parse($url);  
+  // $url = 'http://pf.tradetracker.net/?aid=1&fid=251713&categoryType=2&additionalType=2&limit=10';
+  // print XmlToJson::Parse($url);  
 });
 
 $app->run();
