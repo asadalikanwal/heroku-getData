@@ -1,6 +1,7 @@
 <?php
 
 require('../vendor/autoload.php');
+header("Access-Control-Allow-Origin: *");
 
 $app = new Silex\Application();
 $app['debug'] = true;
