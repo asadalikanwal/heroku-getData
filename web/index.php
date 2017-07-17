@@ -47,6 +47,16 @@ $app->get('/getData', function() use($app) {
 
     }
 
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // collect value of input field
+        $name = $_POST['data']; 
+        if (empty($name)) {
+            echo "Name is empty";
+        } else {
+            echo $name;
+        }
+    }
+
   if (is_ajax()) {
     echo ("is_ajax()");
     if (isset($_POST["action"]) && !empty($_POST["action"])) { //Checks if action value exists
