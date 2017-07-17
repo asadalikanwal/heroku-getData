@@ -32,6 +32,17 @@ $app->get('/getData', function() use($app) {
 
 
   echo ("Welcome");
+  echo $_SERVER['PHP_SELF'];
+echo "<br>";
+echo $_SERVER['SERVER_NAME'];
+echo "<br>";
+echo $_SERVER['HTTP_HOST'];
+echo "<br>";
+echo $_SERVER['HTTP_REFERER'];
+echo "<br>";
+echo $_SERVER['HTTP_USER_AGENT'];
+echo "<br>";
+echo $_SERVER['SCRIPT_NAME'];
 
 
     class XmlToJson {
@@ -46,6 +57,21 @@ $app->get('/getData', function() use($app) {
       }
 
     }
+
+  echo "Study " . $_GET['data'];
+
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // collect value of input field
+    $name = $_REQUEST['data'];
+    if (empty($name)) {
+        echo "Name is empty";
+    } else {
+        echo $name;
+    }
+}
+
+
+
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // collect value of input field
