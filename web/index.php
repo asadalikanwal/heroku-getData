@@ -34,9 +34,9 @@ $app->post('/getData', function() use($app) {
 
   echo ("Welcome");
   
-    $c = $_POST['url'];
+    $c = $_POST['data'];
 
-    echo ($c);
+    echo "I have data {$c} on my php page /n /r";
 
 
     class XmlToJson {
