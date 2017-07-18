@@ -1,8 +1,8 @@
 <?php
 
 require('../vendor/autoload.php');
-header("Access-Control-Allow-Origin: *");
-header("Content-type: application/xml");
+header("Access-Control-Allow-Origin: true");
+header("Content-type: application/json");
 
 $app = new Silex\Application();
 $app['debug'] = true;
