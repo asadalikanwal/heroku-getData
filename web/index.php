@@ -66,7 +66,7 @@ $app->post('/getData', function() use($app) {
         // $fileContents = str_replace(array("\/"), '/', $fileContents);
         $fileContents = trim(str_replace('"', "'", $fileContents));
         $simpleXml = simplexml_load_string($fileContents);
-        $jsonFinal = str_replace(("\/"), '/', $simpleXml); 
+        $jsonFinal = str_replace(('\/'), '/', $simpleXml); 
         $json = json_encode($jsonFinal);
         return $json;
       } 
