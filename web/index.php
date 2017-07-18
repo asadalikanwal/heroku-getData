@@ -67,10 +67,9 @@ $app->post('/getData', function() use($app) {
         $fileContents = trim(str_replace('"', "'", $fileContents));
         $simpleXml = simplexml_load_string($fileContents);
         $json = json_encode($fileContents);
-        $jsonFinal = str_replace(("\/"), '/', $json);
+        // $jsonFinal = str_replace(("\/"), '/', $json); 
         return $json;
-      }
-
+      } 
     }
   
  
@@ -78,7 +77,7 @@ $app->post('/getData', function() use($app) {
 
   
   // $url = 'http://pf.tradetracker.net/?aid=1&fid=251713&categoryType=2&additionalType=2&limit=10';
-  return XmlToJson::Parse($url);  
+ 
   // $fileContents= file_get_contents($url);
 
     // $xml = new SimpleXMLElement(
@@ -98,7 +97,8 @@ $app->post('/getData', function() use($app) {
     // return $result;
 
 
-  // return xmlToArray($fileContents);
+    // return xmlToArray($fileContents);
+   return XmlToJson::Parse($url);  
 });
 
 $app->run();
