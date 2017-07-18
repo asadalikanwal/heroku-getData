@@ -62,9 +62,9 @@ $app->post('/getData', function() use($app) {
     class XmlToJson {
       public function Parse ($url) {
         $fileContents= file_get_contents($url);
-        $fileContents = str_replace(array("\n", "\r", "\t"), '', $fileContents);
+        // $fileContents = str_replace(array("\n", "\r", "\t"), '', $fileContents);
         // $fileContents = str_replace(array("\/"), '/', $fileContents);
-        $fileContents = trim(str_replace('"', "'", $fileContents));
+        // $fileContents = trim(str_replace('"', "'", $fileContents));
         $simpleXml = simplexml_load_string($fileContents);
         $json = json_encode($simpleXml);
         return $json;
@@ -77,24 +77,24 @@ $app->post('/getData', function() use($app) {
 
   
   // $url = 'http://pf.tradetracker.net/?aid=1&fid=251713&categoryType=2&additionalType=2&limit=10';
-  // return XmlToJson::Parse($url);  
+  return XmlToJson::Parse($url);  
   // $fileContents= file_get_contents($url);
 
-    $xml = new SimpleXMLElement(
-        $url,
-        null,
-        true
-    );
-    echo $xml;
-    $data = array();
-    foreach($xml->contact as $contact){
-        array_push(
-            $data,
-            (object)$contact
-        );
-    }
-    $result = json_encode($data);
-    return $result;
+    // $xml = new SimpleXMLElement(
+    //     $url,
+    //     null,
+    //     true
+    // );
+    // echo $xml;
+    // $data = array();
+    // foreach($xml->contact as $contact){
+    //     array_push(
+    //         $data,
+    //         (object)$contact
+    //     );
+    // }
+    // $result = json_encode($data);
+    // return $result;
 
 
   // return xmlToArray($fileContents);
