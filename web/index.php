@@ -1,7 +1,8 @@
 <?php
 
 require('../vendor/autoload.php');
-header("Access-Control-Allow-Origin: *");
+// header("Access-Control-Allow-Origin: *");
+header("Content-type: application/xml");
 
 $app = new Silex\Application();
 $app['debug'] = true;
@@ -32,6 +33,10 @@ $app->post('/getData', function() use($app) {
 
 
   echo ("Welcome");
+  
+    $c = $_GET['a'];
+
+    echo ($c);
 
 
     class XmlToJson {
