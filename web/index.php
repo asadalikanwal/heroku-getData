@@ -34,7 +34,7 @@ $app->post('/getData', function() use($app) {
 
   echo ("Welcome");
   
-    $c = $_GET['url'];
+    $c = $_POST['url'];
 
     echo ($c);
 
