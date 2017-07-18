@@ -54,7 +54,7 @@ $app->post('/getData', function() use($app) {
 
   echo ("Welcome");
   
-    $c = $_POST['data'];
+    $url = $_POST['data'];
 
     echo "I have data {$c} on my php page /n /r";
 
@@ -72,63 +72,6 @@ $app->post('/getData', function() use($app) {
 
     }
 
-  echo "Study " . $_GET['data'];
-  echo 'Hello ' . htmlspecialchars($_POST["data"]) . '!';
-
-  if ($_SERVER["REQUEST_METHOD"] == "POST") {
-     echo "Request";
-    // collect value of input field
-    $name = $_REQUEST['data'];
-    if (empty($name)) {
-        echo "Name is empty";
-    } else {
-        echo $name;
-    }
-}
-
-
-
-
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-       echo "Post";
-        // collect value of input field
-        $name = $_POST['data']; 
-        if (empty($name)) {
-            echo "Name is empty";
-        } else {
-            echo $name;
-        }
-    }
-
-  if (is_ajax()) {
-    echo ("is_ajax()");
-    if (isset($_POST["action"]) && !empty($_POST["action"])) { //Checks if action value exists
-      $action = $_POST["action"];
-      switch($action) { //Switch case for value of action
-        case "test": test_function(); break;
-      }
-    }
-  }
-
-//Function to check if the request is an AJAX request
-function is_ajax() {
-  echo ("is_ajax() 2");
-  return isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest';
-}
-
-function test_function(){
-  echo ("Test function");
-  $return = $_POST;
-  
-  //Do what you need to do with the info. The following are some examples.
-  //if ($return["favorite_beverage"] == ""){
-  //  $return["favorite_beverage"] = "Coke";
-  //}
-  //$return["favorite_restaurant"] = "McDonald's";
-  
-  $return["json"] = json_encode($return);
-  echo json_encode($return);
-}
   
   // $url = 'http://pf.tradetracker.net/?aid=1&fid=251713&categoryType=2&additionalType=2&limit=10';
   // print XmlToJson::Parse($url);  
