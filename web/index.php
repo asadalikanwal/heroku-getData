@@ -58,19 +58,19 @@ $app->post('/getData', function() use($app) {
 
     echo "I have data {$url} on my php page /n /r";
 
+    return "Hello world";
+    // class XmlToJson {
+    //   public function Parse ($url) {
+    //     $fileContents= file_get_contents($url);
+    //     $fileContents = str_replace(array("\n", "\r", "\t"), '', $fileContents);
+    //     $fileContents = str_replace(array("\/"), '/', $fileContents);
+    //     $fileContents = trim(str_replace('"', "'", $fileContents));
+    //     $simpleXml = simplexml_load_string($fileContents);
+    //     $json = json_encode($simpleXml);
+    //     return $json;
+    //   }
 
-    class XmlToJson {
-      public function Parse ($url) {
-        $fileContents= file_get_contents($url);
-        $fileContents = str_replace(array("\n", "\r", "\t"), '', $fileContents);
-        $fileContents = str_replace(array("\/"), '/', $fileContents);
-        $fileContents = trim(str_replace('"', "'", $fileContents));
-        $simpleXml = simplexml_load_string($fileContents);
-        $json = json_encode($simpleXml);
-        return $json;
-      }
-
-    }
+    // }
 
   
   // $url = 'http://pf.tradetracker.net/?aid=1&fid=251713&categoryType=2&additionalType=2&limit=10';
