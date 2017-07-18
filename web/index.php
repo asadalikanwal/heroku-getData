@@ -56,7 +56,7 @@ $app->post('/getData', function() use($app) {
   
     $url = $_POST['data'];
 
-    echo "I have data {$c} on my php page /n /r";
+    echo "I have data {$url} on my php page /n /r";
 
 
     class XmlToJson {
