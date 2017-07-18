@@ -81,18 +81,19 @@ $app->post('/getData', function() use($app) {
   // $fileContents= file_get_contents($url);
 
     $xml = new SimpleXMLElement(
-    $url,
-    null,
-    true
-);
-$data = array();
-foreach($xml->contact as $contact){
-    array_push(
-        $data,
-        (object)$contact
+        $url,
+        null,
+        true
     );
-}
-return json_encode($data);
+    $data = array();
+    foreach($xml->contact as $contact){
+        array_push(
+            $data,
+            (object)$contact
+        );
+    }
+    $result = json_encode($data);
+    return $result;
 
 
   // return xmlToArray($fileContents);
