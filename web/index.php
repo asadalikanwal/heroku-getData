@@ -52,7 +52,7 @@ $app->post('/getData', function() use($app) {
  *
  */
 
-  echo ("Welcome");
+  // echo ("Welcome");
   
     $url = $_POST['data'];
 
