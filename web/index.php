@@ -85,6 +85,7 @@ $app->post('/getData', function() use($app) {
         null,
         true
     );
+    echo $xml;
     $data = array();
     foreach($xml->contact as $contact){
         array_push(
